@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Swift.Models"
+             x:Class="Swift.Views.HistoryView">
+
+    <Grid Padding="24,48,24,140" RowDefinitions="Auto,*" RowSpacing="16">
+
+        <Label Grid.Row="0" Text="TRIP HISTORY" Style="{StaticResource SectionLabelStyle}" />
+
+        <CollectionView Grid.Row="1" x:Name="tripsCollectionView">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="8">
+                    <Label Text="No trips yet" Style="{StaticResource StatLabelStyle}" HorizontalOptions="Center" />
+                    <Label Text="Start tracking on the Speedometer tab" Style="{StaticResource StatLabelStyle}"
+                           HorizontalOptions="Center" FontSize="12" />
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:TripRecord">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="#F4A8A0" Invoked="OnDeleteSwipeInvoked" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <Border Style="{StaticResource CardBorderStyle}" Margin="0,0,0,12">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" RowSpacing="6">
+                                <Label Grid.Row="0" Grid.Column="0"
+                                       Text="{Binding StartTime, StringFormat='{0:MMM d, yyyy · h:mm tt}'}"
+                                       Style="{StaticResource StatLabelStyle}" />
+                                <Label Grid.Row="0" Grid.Column="1"
+                                       Text="{Binding MaxSpeedKph, StringFormat='Max {0:0} km/h'}"
+                                       Style="{StaticResource StatValueStyle}" />
+                                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                       Text="{Binding Duration, StringFormat='Duration: {0:hh\\:mm\\:ss}'}"
+                                       Style="{StaticResource StatLabelStyle}" />
+                            </Grid>
+                        </Border>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentView>

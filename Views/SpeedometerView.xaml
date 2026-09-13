@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swift.Views.SpeedometerView">
+
+    <Grid Padding="24,48,24,140" RowDefinitions="Auto,*,Auto,Auto" RowSpacing="24">
+
+        <!-- Heading badge + unit toggle -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+            <Border Grid.Column="0" HorizontalOptions="Start"
+                    BackgroundColor="{StaticResource SurfaceCard}"
+                    Stroke="{StaticResource BorderSubtle}" StrokeThickness="1"
+                    StrokeShape="RoundRectangle 16" Padding="14,8">
+                <Label x:Name="headingLabel" Text="—" FontFamily="OswaldSemiBold" FontSize="14"
+                       TextColor="{StaticResource AccentBlue}" />
+            </Border>
+
+            <Border Grid.Column="1" HorizontalOptions="End"
+                    BackgroundColor="{StaticResource SurfaceCard}"
+                    Stroke="{StaticResource BorderSubtle}" StrokeThickness="1"
+                    StrokeShape="RoundRectangle 16" Padding="0">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnUnitToggleTapped" />
+                </Border.GestureRecognizers>
+                <Label x:Name="unitToggleLabel" Text="MPH" FontFamily="OswaldSemiBold" FontSize="13"
+                       Padding="14,8" TextColor="{StaticResource TextPrimary}" />
+            </Border>
+        </Grid>
+
+        <!-- The big number -->
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="0">
+            <Label x:Name="speedLabel" Text="0" Style="{StaticResource HeadlineNumberStyle}" FontSize="140" />
+            <Label x:Name="speedUnitLabel" Text="MPH" Style="{StaticResource SectionLabelStyle}" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+        <!-- Avg speed / speed limit row -->
+        <Grid Grid.Row="2" ColumnDefinitions="*,*">
+            <VerticalStackLayout Grid.Column="0" Spacing="2">
+                <Label Text="AVG. SPEED" Style="{StaticResource StatLabelStyle}" />
+                <Label x:Name="avgSpeedLabel" Text="0" Style="{StaticResource StatValueStyle}" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Spacing="2" HorizontalOptions="End">
+                <Label Text="SPEED LIMIT" Style="{StaticResource StatLabelStyle}" HorizontalTextAlignment="End" />
+                <Label x:Name="speedLimitLabel" Text="0" Style="{StaticResource StatValueStyle}" HorizontalTextAlignment="End" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Controls -->
+        <Grid Grid.Row="3" ColumnDefinitions="*,*,*" ColumnSpacing="12">
+            <Button x:Name="startStopButton" Grid.Column="0" Text="Start"
+                    Style="{StaticResource PillButtonStyle}" Clicked="OnStartStopClicked" />
+            <Button Grid.Column="1" Text="Reset"
+                    Style="{StaticResource GhostButtonStyle}" Clicked="OnResetClicked" />
+            <Button Grid.Column="2" Text="Limit"
+                    Style="{StaticResource GhostButtonStyle}" Clicked="OnSetLimitClicked" />
+        </Grid>
+
+    </Grid>
+</ContentView>

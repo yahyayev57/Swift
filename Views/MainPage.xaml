@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Swift.Views"
+             x:Class="Swift.Views.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="*,Auto" RowSpacing="0">
+
+        <Grid Grid.Row="0">
+            <views:SpeedometerView x:Name="speedometerView" IsVisible="True" />
+            <views:StatsView x:Name="statsView" IsVisible="False" />
+            <views:HistoryView x:Name="historyView" IsVisible="False" />
+        </Grid>
+
+        <!-- Pill nav: a capsule outline is drawn around whichever tab is
+             active, matching the reference mockup, rather than one big
+             bar shared by both labels. -->
+        <Border Grid.Row="1"
+                Margin="24,0,24,24"
+                Padding="8"
+                BackgroundColor="{StaticResource SurfaceDark}"
+                Stroke="{StaticResource BorderSubtle}"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 28">
+            <HorizontalStackLayout Spacing="6" HorizontalOptions="Center">
+
+                <Border x:Name="tabSpeedometer" StrokeShape="RoundRectangle 20" Padding="18,10">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSpeedometerTabTapped" />
+                    </Border.GestureRecognizers>
+                    <Label x:Name="tabSpeedometerLabel" Text="Speedometer" FontFamily="OswaldMedium" FontSize="13" />
+                </Border>
+
+                <Border x:Name="tabStats" StrokeShape="RoundRectangle 20" Padding="18,10">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStatsTabTapped" />
+                    </Border.GestureRecognizers>
+                    <Label x:Name="tabStatsLabel" Text="Stats" FontFamily="OswaldMedium" FontSize="13" />
+                </Border>
+
+                <Border x:Name="tabHistory" StrokeShape="RoundRectangle 20" Padding="18,10">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnHistoryTabTapped" />
+                    </Border.GestureRecognizers>
+                    <Label x:Name="tabHistoryLabel" Text="History" FontFamily="OswaldMedium" FontSize="13" />
+                </Border>
+
+            </HorizontalStackLayout>
+        </Border>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Surfaces: dark gray-blue base -->
+    <Color x:Key="AppBackground">#141A22</Color>
+    <Color x:Key="SurfaceDark">#1C2530</Color>
+    <Color x:Key="SurfaceCard">#232E3C</Color>
+    <Color x:Key="SurfaceCardAlt">#2B3949</Color>
+    <Color x:Key="BorderSubtle">#33404F</Color>
+
+    <!-- Text -->
+    <Color x:Key="TextPrimary">#F2F5F8</Color>
+    <Color x:Key="TextSecondary">#8FA0B3</Color>
+    <Color x:Key="TextMuted">#5C6B7C</Color>
+
+    <!-- Pastel accents -->
+    <Color x:Key="AccentBlue">#8FCBEB</Color>
+    <Color x:Key="AccentBluePale">#B7DFF2</Color>
+    <Color x:Key="AccentMint">#A8E6CF</Color>
+    <Color x:Key="AccentCoral">#F4A8A0</Color>
+    <Color x:Key="AccentAmber">#F6D9A0</Color>
+
+    <!-- Status -->
+    <Color x:Key="StatusNormal">#A8E6CF</Color>
+    <Color x:Key="StatusWarning">#F4A8A0</Color>
+
+</ResourceDictionary>

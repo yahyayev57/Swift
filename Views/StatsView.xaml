@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swift.Views.StatsView">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24,48,24,140" Spacing="24">
+
+            <Label Text="CURRENT SPEED" Style="{StaticResource SectionLabelStyle}" HorizontalOptions="Center" />
+            <Label x:Name="speedLabel" Text="0" Style="{StaticResource HeadlineNumberStyle}" />
+
+            <Border Style="{StaticResource CardBorderStyle}">
+                <VerticalStackLayout Spacing="18">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Average Speed" Style="{StaticResource StatLabelStyle}" VerticalOptions="Center" />
+                        <Label x:Name="avgSpeedLabel" Grid.Column="1" Text="0" Style="{StaticResource StatValueStyle}" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Speed Limit" Style="{StaticResource StatLabelStyle}" VerticalOptions="Center" />
+                        <Border Grid.Column="1" BackgroundColor="{StaticResource SurfaceCard}"
+                                Stroke="{StaticResource BorderSubtle}" StrokeThickness="1"
+                                StrokeShape="RoundRectangle 8" Padding="12,6">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSpeedLimitTapped" />
+                            </Border.GestureRecognizers>
+                            <Label x:Name="speedLimitLabel" Text="0" Style="{StaticResource StatValueStyle}" />
+                        </Border>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Maximum Speed Record" Style="{StaticResource StatLabelStyle}" VerticalOptions="Center" />
+                        <Label x:Name="maxSpeedLabel" Grid.Column="1" Text="0" Style="{StaticResource StatValueStyle}" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Distance Traveled" Style="{StaticResource StatLabelStyle}" VerticalOptions="Center" />
+                        <Label x:Name="distanceLabel" Grid.Column="1" Text="0 m" Style="{StaticResource StatValueStyle}" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Elapsed Time" Style="{StaticResource StatLabelStyle}" VerticalOptions="Center" />
+                        <Label x:Name="elapsedLabel" Grid.Column="1" Text="00:00:00" Style="{StaticResource StatValueStyle}" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Heading" Style="{StaticResource StatLabelStyle}" VerticalOptions="Center" />
+                        <Label x:Name="headingLabel" Grid.Column="1" Text="—" Style="{StaticResource StatValueStyle}" />
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentView>

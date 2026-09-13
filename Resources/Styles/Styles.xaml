@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor" Value="{StaticResource AppBackground}" />
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+        <Setter Property="FontFamily" Value="OswaldRegular" />
+    </Style>
+
+    <!-- The giant numeral — the app's one signature element -->
+    <Style x:Key="HeadlineNumberStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="OswaldBold" />
+        <Setter Property="FontSize" Value="96" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="SectionLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="OswaldSemiBold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondary}" />
+        <Setter Property="CharacterSpacing" Value="1.5" />
+    </Style>
+
+    <Style x:Key="StatValueStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="OswaldMedium" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+    </Style>
+
+    <Style x:Key="StatLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="OswaldLight" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondary}" />
+    </Style>
+
+    <Style x:Key="CardBorderStyle" TargetType="Border">
+        <Setter Property="BackgroundColor" Value="{StaticResource SurfaceCard}" />
+        <Setter Property="Stroke" Value="{StaticResource BorderSubtle}" />
+        <Setter Property="StrokeThickness" Value="1" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 20" />
+        <Setter Property="Padding" Value="20" />
+    </Style>
+
+    <Style x:Key="PillButtonStyle" TargetType="Button">
+        <Setter Property="FontFamily" Value="OswaldSemiBold" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource AppBackground}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource AccentBlue}" />
+        <Setter Property="CornerRadius" Value="24" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="Padding" Value="12,0" />
+    </Style>
+
+    <Style x:Key="GhostButtonStyle" TargetType="Button">
+        <Setter Property="FontFamily" Value="OswaldSemiBold" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondary}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="{StaticResource BorderSubtle}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="24" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="Padding" Value="12,0" />
+    </Style>
+
+</ResourceDictionary>
